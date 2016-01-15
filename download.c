@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
     Address.sin_port = htons(nHostPort);
     Address.sin_family = AF_INET;
 
-    printf("\nConnecting to %s (%X) on port %d", strHostName, nHostAddress, nHostPort);
 
     /* connect to host */
     if (connect(hSocket, (struct sockaddr *) &Address, sizeof(Address)) == SOCKET_ERROR)
