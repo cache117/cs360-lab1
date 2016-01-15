@@ -24,16 +24,15 @@ int main(int argc, char *argv[])
     int nHostPort;
     char url[URL_NAME_SIZE];
 
-    if (argc < 4)
+    if (argc < 6)
     {
-        printf("\nUsage: download host-name host-port URL\n");
+        printf("\nUsage: download host-name host-port path -c or -d\n");
         return 0;
     }
     else
     {
         strcpy(strHostName, argv[1]);
         nHostPort = atoi(argv[2]);
-        strcpy(url, argv[3]);
     }
 
     printf("\nMaking a socket");
@@ -65,9 +64,15 @@ int main(int argc, char *argv[])
         return 0;
     }
 #define MAXGET 1000
+    // Create HTTP Message
     char  *message = (char *) malloc(MAXGET);
-    write(hSocket, pBuffer, nReadAmount);
+    sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%s\r\n\r\n", argv[3], argv[1], argv[2]);
+    // Send HTTP on the socket
+    printf("Request: %s\n", message);
+    write(hSocket, message, strlen(message));
+    // Rease Response back from socket
     nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
+    printf("Response: %s\n", pBuffer);
 
     /* read from socket into buffer
     ** number returned by read() and write() is the number of bytes

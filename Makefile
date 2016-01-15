@@ -1,4 +1,4 @@
-all: client server
+all: client server download
 download: download.c
 	gcc -o download download.c
 client: client.c
