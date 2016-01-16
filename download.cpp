@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "CS360Utils.h"
 
 #define SOCKET_ERROR        -1
 #define BUFFER_SIZE         10000
@@ -107,5 +108,38 @@ int main(int argc, char *argv[])
     {
         printf("\nCould not close socket\n");
         return 0;
+    }
+
+    vector<char *> headerLines;
+    char contentType[MAX_MSG_SZ];
+
+    // First read the status line
+    char *startline = GetLine(hSocket);
+    printf("Status line %s\n\n", startline);
+
+    // Read the header lines
+    GetHeaderLines(headerLines, hSocket, false);
+
+
+    // Now print them out
+    for (int i = 0; i < headerLines.size(); i++)
+    {
+        printf("[%d] %s\n", i, headerLines[i]);
+        if (strstr(headerLines[i], "Content-Type"))
+        {
+            sscanf(headerLines[i], "Content-Type: %s", contentType);
+        }
+    }
+
+    printf("\n=======================\n");
+    printf("Headers are finished, now read the file\n");
+    printf("Content Type is %s\n", contentType);
+    printf("=======================\n\n");
+
+    // Now read and print the rest of the file
+    int rval;
+    while ((rval = read(hSocket, pBuffer, MAX_MSG_SZ)) > 0)
+    {
+        write(1, pBuffer, (unsigned int) rval);
     }
 }
