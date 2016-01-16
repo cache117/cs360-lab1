@@ -6,7 +6,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <iosfwd>
 
 
 #define SOCKET_ERROR        -1
@@ -35,8 +34,10 @@ int main(int argc, char *argv[])
     }
     else
     {
-        while ((option = getopt (argc, argv, "c:d")) != -1) {
-            switch (option) {
+        while ((option = getopt(argc, argv, "c:d")) != -1)
+        {
+            switch (option)
+            {
                 case 'c':
                     count = atoi(optarg);
                     break;
@@ -47,7 +48,7 @@ int main(int argc, char *argv[])
                     abort();
             }
         }
-        printf ("count = %d, printHeaders = %d\n", count, printHeaders);
+        printf("count = %d, printHeaders = %d\n", count, printHeaders);
 
         strcpy(strHostName, argv[optind++]);
         nHostPort = atoi(argv[optind++]);
@@ -83,7 +84,7 @@ int main(int argc, char *argv[])
     }
 #define MAXGET 1000
     // Create HTTP Message
-    char  *message = (char *) malloc(MAXGET);
+    char *message = (char *) malloc(MAXGET);
     sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%d\r\n\r\n", path, strHostName, nHostPort);
     // Send HTTP on the socket
     printf("Request: %s\n", message);
