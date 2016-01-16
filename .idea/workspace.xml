@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="false">
-    <generated />
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="Lab1" targetName="download" />
+      <config projectName="lab1" targetName="client" />
+      <config projectName="lab1" targetName="server" />
+      <config projectName="Lab1" targetName="server" />
+    </generated>
   </component>
-  <component name="CMakeSettings" AUTO_RELOAD="false" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
+  <component name="CMakeSettings" AUTO_RELOAD="true" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
     <ADDITIONAL_GENERATION_ENVIRONMENT>
       <envs />
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="644caf68-9cb3-4333-8264-4ee71d0cad58" name="Default" comment="" />
+    <list default="true" id="644caf68-9cb3-4333-8264-4ee71d0cad58" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client.c" afterPath="$PROJECT_DIR$/client.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/download.c" afterPath="$PROJECT_DIR$/download.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/server.c" afterPath="$PROJECT_DIR$/server.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Lab1.iml" afterPath="$PROJECT_DIR$/.idea/Lab1.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
     <ignored path="Lab1.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,21 +43,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.c">
+      <file leaf-file-name="server.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="38" />
-              <folding />
+              <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+              <folding>
+                <element signature="e#37#103#0" expanded="true" />
+                <element signature="e#255#285#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client.c">
+      <file leaf-file-name="download.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/download.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0065897857">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.5160142">
+              <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+              <folding>
+                <element signature="e#38#104#0" expanded="true" />
+                <element signature="e#143#162#0" expanded="true" />
+                <element signature="e#197#227#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -51,11 +82,21 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/server.c" />
         <option value="$PROJECT_DIR$/client.c" />
+        <option value="$PROJECT_DIR$/server.cpp" />
+        <option value="$PROJECT_DIR$/client.cpp" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/download.cpp" />
       </list>
     </option>
   </component>
@@ -67,14 +108,14 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="false" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="0" id="Add" />
@@ -119,10 +160,125 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/CS 360/Lab1/client.c" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client.c</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Makefile</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/client</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/download</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/download.c</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/server</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunManager" selected="Application.download">
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS="FALSE" TEST_MODE="SUITE_TEST">
       <envs />
       <method />
@@ -148,6 +304,23 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="server" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Lab1" TARGET_NAME="server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab1" RUN_TARGET_NAME="server">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="download" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mclement.us 80 /foo.html -c 100" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Lab1" TARGET_NAME="download" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab1" RUN_TARGET_NAME="download">
+      <envs />
+      <method />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="1" class="java.lang.String" itemvalue="Application.server" />
+      <item index="2" class="java.lang.String" itemvalue="Application.download" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -163,65 +336,175 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18006264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18177028" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3167006" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30972517" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/download.cpp</url>
+          <line>58</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client.c">
+    <entry file="file://$PROJECT_DIR$/server.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#37#103#0" expanded="true" />
+            <element signature="e#255#285#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.c">
+    <entry file="file://$PROJECT_DIR$/client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <element signature="e#139#158#0" expanded="false" />
+            <element signature="e#233#263#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="38" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="38" />
+          <folding>
+            <element signature="e#37#103#0" expanded="true" />
+            <element signature="e#255#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#139#158#0" expanded="false" />
+            <element signature="e#233#263#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="38" />
+          <folding>
+            <element signature="e#37#103#0" expanded="true" />
+            <element signature="e#255#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#139#158#0" expanded="false" />
+            <element signature="e#233#263#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding>
+            <element signature="e#139#158#0" expanded="false" />
+            <element signature="e#233#263#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+          <folding>
+            <element signature="e#37#103#0" expanded="true" />
+            <element signature="e#255#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client.c">
+    <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0065897857">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.16190477">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5160142">
+          <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+          <folding>
+            <element signature="e#38#104#0" expanded="true" />
+            <element signature="e#143#162#0" expanded="true" />
+            <element signature="e#197#227#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,13 +1,20 @@
 #include <sys/types.h>
+#ifndef WIN32
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#else
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#endif
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef WIN32
 #define SOCKET_ERROR        -1
+#endif
 #define BUFFER_SIZE         100
 #define MESSAGE             "This is the message I'm sending back and forth"
 #define QUEUE_SIZE          5
@@ -66,7 +73,7 @@ int main(int argc, char* argv[])
               sin_addr.s_addr   = %d\n\
               sin_port          = %d\n"
               , Address.sin_family
-              , Address.sin_addr.s_addr
+              , (int) Address.sin_addr.s_addr
               , ntohs(Address.sin_port)
             );
 

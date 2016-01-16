@@ -1,13 +1,19 @@
 #include <sys/types.h>
+#ifndef WIN32
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#else
+#include <winsock2.h>
+#endif
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef WIN32
 #define SOCKET_ERROR        -1
+#endif
 #define BUFFER_SIZE         100
 #define HOST_NAME_SIZE      255
 

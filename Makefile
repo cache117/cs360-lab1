@@ -1,9 +1,9 @@
 all: client server download
 download: download.c
-	gcc -o download download.c
+	g++ -o download download.c
 client: client.c
-	gcc -o client client.c
+	g++ -o client client.c
 server: server.c
-	gcc -o server server.c
+	g++ -o server server.c
 clean: 
 	rm client server download
