@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/download.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/server.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CS360Utils.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

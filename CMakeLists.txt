@@ -11,6 +11,6 @@ add_executable(server ${SERVER_FILES})
 target_link_libraries(server wsock32 ws2_32)
 
 #download
-set(DOWNLOAD_FILES download.cpp)
+set(DOWNLOAD_FILES download.cpp CS360Utils.h)
 add_executable(download ${DOWNLOAD_FILES})
 target_link_libraries(download wsock32 ws2_32)
