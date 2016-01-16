@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
 #define MAXGET 1000
     // Create HTTP Message
     char  *message = (char *) malloc(MAXGET);
-    sprintf(message, "GET %s HTTP/1.1\r\nHost:%d:%s\r\n\r\n", path, nHostPort, strHostName);
+    sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%d\r\n\r\n", path, strHostName, nHostPort);
     // Send HTTP on the socket
     printf("Request: %s\n", message);
     write(hSocket, message, strlen(message));
