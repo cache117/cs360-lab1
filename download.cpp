@@ -1,30 +1,21 @@
 #include <sys/types.h>
-
-#ifndef WIN32
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
-#else
-
-#include <winsock2.h>
-
-#endif
-
+#include <string.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <iosfwd>
 
-#ifndef WIN32
+
 #define SOCKET_ERROR        -1
-#endif
 #define BUFFER_SIZE         100
 #define HOST_NAME_SIZE      255
 
 int main(int argc, char *argv[])
 {
     int option;
-    int printHeaders = 0;
-    int count = 0;
-    char *path;
     int hSocket;                 /* handle to socket */
     struct hostent *pHostInfo;   /* holds info about a machine */
     struct sockaddr_in Address;  /* Internet socket address stuct */
@@ -33,19 +24,19 @@ int main(int argc, char *argv[])
     unsigned nReadAmount;
     char strHostName[HOST_NAME_SIZE];
     int nHostPort;
-
+    int count = 0;
+    int printHeaders = 0;
+    char *path;
 
     if (argc < 4)
     {
-        printf("\nUsage: download host-name host-port path [-c | -d]  \n");
+        printf("\nUsage: download host-name host-port path [-c or -d]\n");
         return 0;
     }
     else
     {
-        while ((option = getopt(argc, argv, "c:d")) != -1)
-        {
-            switch (option)
-            {
+        while ((option = getopt (argc, argv, "c:d")) != -1) {
+            switch (option) {
                 case 'c':
                     count = atoi(optarg);
                     break;
@@ -56,7 +47,7 @@ int main(int argc, char *argv[])
                     abort();
             }
         }
-        printf("count = %d, printHeaders = %d\n", count, printHeaders);
+        printf ("count = %d, printHeaders = %d\n", count, printHeaders);
 
         strcpy(strHostName, argv[optind++]);
         nHostPort = atoi(argv[optind++]);
@@ -65,10 +56,6 @@ int main(int argc, char *argv[])
 
     printf("\nMaking a socket");
     /* make a socket */
-#ifdef WIN32
-    WSADATA wsaData;
-    WSAStartup(MAKEWORD(2, 2), &wsaData);
-#endif
     hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
     if (hSocket == SOCKET_ERROR)
@@ -87,6 +74,7 @@ int main(int argc, char *argv[])
     Address.sin_port = htons(nHostPort);
     Address.sin_family = AF_INET;
 
+
     /* connect to host */
     if (connect(hSocket, (struct sockaddr *) &Address, sizeof(Address)) == SOCKET_ERROR)
     {
@@ -95,7 +83,7 @@ int main(int argc, char *argv[])
     }
 #define MAXGET 1000
     // Create HTTP Message
-    char *message = (char *) malloc(MAXGET);
+    char  *message = (char *) malloc(MAXGET);
     sprintf(message, "GET %s HTTP/1.1\r\nHost:%d:%s\r\n\r\n", path, nHostPort, strHostName);
     // Send HTTP on the socket
     printf("Request: %s\n", message);

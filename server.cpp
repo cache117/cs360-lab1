@@ -1,12 +1,16 @@
 #include <sys/types.h>
+/*
 #ifndef WIN32
+ */
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+/*
 #else
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #endif
+ */
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>

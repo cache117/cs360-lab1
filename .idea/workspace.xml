@@ -14,15 +14,11 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="644caf68-9cb3-4333-8264-4ee71d0cad58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client.c" afterPath="$PROJECT_DIR$/client.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/download.c" afterPath="$PROJECT_DIR$/download.cpp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/server.c" afterPath="$PROJECT_DIR$/server.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Lab1.iml" afterPath="$PROJECT_DIR$/.idea/Lab1.iml" />
+    <list default="true" id="644caf68-9cb3-4333-8264-4ee71d0cad58" name="Default" comment="Working with CLion">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/download.cpp" afterPath="$PROJECT_DIR$/download.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.cpp" afterPath="$PROJECT_DIR$/server.cpp" />
     </list>
     <ignored path="Lab1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +43,21 @@
         <entry file="file://$PROJECT_DIR$/server.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
               <folding>
-                <element signature="e#37#103#0" expanded="true" />
-                <element signature="e#255#285#0" expanded="true" />
+                <element signature="e#175#194#0" expanded="true" />
+                <element signature="e#269#299#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,13 +65,19 @@
       <file leaf-file-name="download.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/download.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5160142">
-              <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
-              <folding>
-                <element signature="e#38#104#0" expanded="true" />
-                <element signature="e#143#162#0" expanded="true" />
-                <element signature="e#197#227#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.090747334">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,11 +103,11 @@
       <list>
         <option value="$PROJECT_DIR$/server.c" />
         <option value="$PROJECT_DIR$/client.c" />
-        <option value="$PROJECT_DIR$/server.cpp" />
         <option value="$PROJECT_DIR$/client.cpp" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/server.cpp" />
         <option value="$PROJECT_DIR$/download.cpp" />
       </list>
     </option>
@@ -333,6 +345,13 @@
       <option name="number" value="Default" />
       <updated>1452744608271</updated>
     </task>
+    <task id="LOCAL-00001" summary="Working with CLion">
+      <created>1452978441739</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1452978441739</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -370,15 +389,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working with CLion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working with CLion" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/download.cpp</url>
-          <line>58</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
@@ -389,8 +405,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#37#103#0" expanded="true" />
-            <element signature="e#255#285#0" expanded="true" />
+            <element signature="e#175#194#0" expanded="true" />
+            <element signature="e#269#299#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -411,8 +427,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="38" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="38" />
           <folding>
-            <element signature="e#37#103#0" expanded="true" />
-            <element signature="e#255#285#0" expanded="true" />
+            <element signature="e#175#194#0" expanded="true" />
+            <element signature="e#269#299#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -433,8 +449,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="38" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="38" />
           <folding>
-            <element signature="e#37#103#0" expanded="true" />
-            <element signature="e#255#285#0" expanded="true" />
+            <element signature="e#175#194#0" expanded="true" />
+            <element signature="e#269#299#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -450,40 +466,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding>
-            <element signature="e#139#158#0" expanded="false" />
-            <element signature="e#233#263#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
-          <folding>
-            <element signature="e#37#103#0" expanded="true" />
-            <element signature="e#255#285#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16190477">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -496,15 +482,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding>
+            <element signature="e#175#194#0" expanded="true" />
+            <element signature="e#269#299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/download.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5160142">
-          <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
-          <folding>
-            <element signature="e#38#104#0" expanded="true" />
-            <element signature="e#143#162#0" expanded="true" />
-            <element signature="e#197#227#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.090747334">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
