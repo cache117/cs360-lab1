@@ -53,8 +53,8 @@
       <file leaf-file-name="download.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/download.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7544484">
-              <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+            <state vertical-scroll-proportion="1.5142349">
+              <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="127" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -388,7 +388,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452980668727</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Read content">
+      <created>1452981200766</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1452981200766</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -428,7 +434,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working with CLion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working with CLion" />
+    <MESSAGE value="Read content" />
+    <option name="LAST_COMMIT_MESSAGE" value="Read content" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -558,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/download.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7544484">
-          <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+        <state vertical-scroll-proportion="1.5142349">
+          <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="127" selection-end-column="0" />
           <folding />
         </state>
       </provider>

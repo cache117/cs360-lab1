@@ -92,23 +92,6 @@ int main(int argc, char *argv[])
     write(hSocket, message, strlen(message));
     // Rease Response back from socket
     nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
-    printf("Response: %s\n", pBuffer);
-
-    /* read from socket into buffer
-    ** number returned by read() and write() is the number of bytes
-    ** read or written, with -1 being that an error occured */
-    printf("\nReceived \"%s\" from server\n", pBuffer);
-    /* write what we received back to the server */
-
-    printf("\nWriting \"%s\" to server", pBuffer);
-
-    printf("\nClosing socket\n");
-    /* close socket */
-    if (close(hSocket) == SOCKET_ERROR)
-    {
-        printf("\nCould not close socket\n");
-        return 0;
-    }
 
     vector<char *> headerLines;
     char contentType[MAX_MSG_SZ];
@@ -142,4 +125,13 @@ int main(int argc, char *argv[])
     {
         write(1, pBuffer, (unsigned int) rval);
     }
+
+    printf("\nClosing socket\n");
+    /* close socket */
+    if (close(hSocket) == SOCKET_ERROR)
+    {
+        printf("\nCould not close socket\n");
+        return 0;
+    }
+
 }
