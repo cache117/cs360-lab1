@@ -37,8 +37,10 @@ int main(int argc, char *argv[])
     {
         while ((option = getopt(argc, argv, "c:d")) != -1)
         {
+
             switch (option)
             {
+
                 case 'c':
                     count = atoi(optarg);
                     break;
@@ -86,9 +88,12 @@ int main(int argc, char *argv[])
 #define MAXGET 1000
     // Create HTTP Message
     char *message = (char *) malloc(MAXGET);
+
+
     sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%d\r\n\r\n", path, strHostName, nHostPort);
     // Send HTTP on the socket
     printf("Request: %s\n", message);
+
     write(hSocket, message, strlen(message));
     // Rease Response back from socket
     nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
@@ -107,9 +112,11 @@ int main(int argc, char *argv[])
     // Now print them out
     for (int i = 0; i < headerLines.size(); i++)
     {
+
         printf("[%d] %s\n", i, headerLines[i]);
         if (strstr(headerLines[i], "Content-Type"))
         {
+
             sscanf(headerLines[i], "Content-Type: %s", contentType);
         }
     }
@@ -123,7 +130,8 @@ int main(int argc, char *argv[])
     int rval;
     while ((rval = read(hSocket, pBuffer, MAX_MSG_SZ)) > 0)
     {
-        write(1, pBuffer, (unsigned int) rval);
+
+        write(1, pBuffer, rval);
     }
 
     printf("\nClosing socket\n");
