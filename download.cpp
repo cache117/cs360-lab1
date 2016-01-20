@@ -97,6 +97,7 @@ int main(int argc, char *argv[])
     write(hSocket, message, strlen(message));
     // Rease Response back from socket
     nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
+    printf("Response: %s\n", pBuffer);
 
     vector<char *> headerLines;
     char contentType[MAX_MSG_SZ];
