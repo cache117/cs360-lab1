@@ -92,13 +92,10 @@ int main(int argc, char *argv[])
     // Send HTTP on the socket
     printf("Request: %s\n", message);
 
-    if (printHeaders)
-    {
-        write(hSocket, message, strlen(message));
-    }
+    write(hSocket, message, strlen(message));
     // Rease Response back from socket
-    nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
-    printf("Response: %s\n", pBuffer);
+    //nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
+    //printf("Response: %s\n", pBuffer);
 
     vector<char *> headerLines;
     char contentType[MAX_MSG_SZ];
