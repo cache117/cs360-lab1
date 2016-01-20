@@ -131,7 +131,8 @@ int main(int argc, char *argv[])
     int bytesRead;
     while ((bytesRead = read(hSocket, pBuffer, MAX_MSG_SIZE)) > 0)
     {
-        write(count, pBuffer, (unsigned int) bytesRead);
+        write(1, pBuffer, (unsigned int) bytesRead);
+        printf("Line");
     }
 
     printf("\nClosing socket\n");

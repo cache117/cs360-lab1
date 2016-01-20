@@ -16,7 +16,6 @@
   <component name="ChangeListManager">
     <list default="true" id="644caf68-9cb3-4333-8264-4ee71d0cad58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CS360Utils.h" afterPath="$PROJECT_DIR$/CS360Utils.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/download.cpp" afterPath="$PROJECT_DIR$/download.cpp" />
     </list>
     <ignored path="Lab1.iws" />
@@ -54,8 +53,8 @@
       <file leaf-file-name="download.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/download.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23441109">
-              <caret line="95" column="17" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.66628176">
+              <caret line="134" column="23" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -65,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/CS360Utils.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+              <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -316,7 +315,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453261083228</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="debug working.">
+      <created>1453261238277</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1453261238277</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -512,7 +517,7 @@
     <entry file="file://$PROJECT_DIR$/CS360Utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+          <caret line="122" column="22" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -521,8 +526,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/download.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23441109">
-          <caret line="95" column="17" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.66628176">
+          <caret line="134" column="23" selection-start-line="134" selection-start-column="23" selection-end-line="134" selection-end-column="23" />
           <folding />
         </state>
       </provider>
