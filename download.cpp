@@ -37,10 +37,8 @@ int main(int argc, char *argv[])
     {
         while ((option = getopt(argc, argv, "c:d")) != -1)
         {
-
             switch (option)
             {
-
                 case 'c':
                     count = atoi(optarg);
                     break;
@@ -58,7 +56,7 @@ int main(int argc, char *argv[])
         path = argv[optind];
     }
 
-    printf("\nMaking a socket");
+    printf("\nMaking a socket\n");
     /* make a socket */
     hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
@@ -94,7 +92,10 @@ int main(int argc, char *argv[])
     // Send HTTP on the socket
     printf("Request: %s\n", message);
 
-    write(hSocket, message, strlen(message));
+    if (printHeaders)
+    {
+        write(hSocket, message, strlen(message));
+    }
     // Rease Response back from socket
     nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
     printf("Response: %s\n", pBuffer);
@@ -111,21 +112,22 @@ int main(int argc, char *argv[])
 
 
     // Now print them out
-    for (int i = 0; i < headerLines.size(); i++)
+    if (printHeaders)
     {
-
-        printf("[%d] %s\n", i, headerLines[i]);
-        if (strstr(headerLines[i], "Content-Type"))
+        for (int i = 0; i < headerLines.size(); i++)
         {
-
-            sscanf(headerLines[i], "Content-Type: %s", contentType);
+            printf("[%d] %s\n", i, headerLines[i]);
+            if (strstr(headerLines[i], "Content-Type"))
+            {
+                sscanf(headerLines[i], "Content-Type: %s", contentType);
+            }
         }
-    }
 
-    printf("\n=======================\n");
-    printf("Headers are finished, now read the file\n");
-    printf("Content Type is %s\n", contentType);
-    printf("=======================\n\n");
+        printf("\n=======================\n");
+        printf("Headers are finished, now read the file\n");
+        printf("Content Type is %s\n", contentType);
+        printf("=======================\n\n");
+    }
 
     // Now read and print the rest of the file
     int rval;
