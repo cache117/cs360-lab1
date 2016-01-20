@@ -12,6 +12,7 @@
 #define SOCKET_ERROR        -1
 #define BUFFER_SIZE         10000
 #define HOST_NAME_SIZE      255
+#define MAX_GET 1000
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
     unsigned nReadAmount;
     char strHostName[HOST_NAME_SIZE];
     int nHostPort;
-    int count = 0;
+    int count = 1;
     int printHeaders = 0;
     char *path;
 
@@ -83,9 +84,9 @@ int main(int argc, char *argv[])
         printf("\nCould not connect to host\n");
         return 0;
     }
-#define MAXGET 1000
+
     // Create HTTP Message
-    char *message = (char *) malloc(MAXGET);
+    char *message = (char *) malloc(MAX_GET);
 
 
     sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%d\r\n\r\n", path, strHostName, nHostPort);
@@ -93,45 +94,42 @@ int main(int argc, char *argv[])
     printf("Request: %s\n", message);
 
     write(hSocket, message, strlen(message));
-    // Rease Response back from socket
-    //nReadAmount = read(hSocket, pBuffer, BUFFER_SIZE);
-    //printf("Response: %s\n", pBuffer);
 
     vector<char *> headerLines;
     char contentType[MAX_MSG_SZ];
 
     // First read the status line
-    char *startline = GetLine(hSocket);
-    printf("Status line %s\n\n", startline);
-
-    // Read the header lines
-    GetHeaderLines(headerLines, hSocket, false);
+    char *startLine = GetLine(hSocket);
+    printf("Status: %s\n\n", startLine);
 
 
     // Now print them out
     if (printHeaders)
     {
+        // Read the header lines
+        GetHeaderLines(headerLines, hSocket, false);
+
         for (int i = 0; i < headerLines.size(); i++)
         {
-            printf("[%d] %s\n", i, headerLines[i]);
+            printf("%s\n", headerLines[i]);
             if (strstr(headerLines[i], "Content-Type"))
             {
                 sscanf(headerLines[i], "Content-Type: %s", contentType);
             }
         }
-
+        /*
         printf("\n=======================\n");
         printf("Headers are finished, now read the file\n");
         printf("Content Type is %s\n", contentType);
         printf("=======================\n\n");
+        */
     }
 
     // Now read and print the rest of the file
-    int rval;
-    while ((rval = read(hSocket, pBuffer, MAX_MSG_SZ)) > 0)
+    int bytesRead;
+    while ((bytesRead = read(hSocket, pBuffer, MAX_MSG_SZ)) > 0)
     {
-
-        write(1, pBuffer, rval);
+        write(count, pBuffer, (unsigned int) bytesRead);
     }
 
     printf("\nClosing socket\n");
