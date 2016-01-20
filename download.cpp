@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
     write(hSocket, message, strlen(message));
 
     vector<char *> headerLines;
-    char contentType[MAX_MSG_SZ];
+    char contentType[MAX_MSG_SIZE];
 
     // First read the status line
     char *startLine = GetLine(hSocket);
@@ -112,10 +112,12 @@ int main(int argc, char *argv[])
         for (int i = 0; i < headerLines.size(); i++)
         {
             printf("%s\n", headerLines[i]);
+            /*
             if (strstr(headerLines[i], "Content-Type"))
             {
                 sscanf(headerLines[i], "Content-Type: %s", contentType);
             }
+             */
         }
         /*
         printf("\n=======================\n");
@@ -127,7 +129,7 @@ int main(int argc, char *argv[])
 
     // Now read and print the rest of the file
     int bytesRead;
-    while ((bytesRead = read(hSocket, pBuffer, MAX_MSG_SZ)) > 0)
+    while ((bytesRead = read(hSocket, pBuffer, MAX_MSG_SIZE)) > 0)
     {
         write(count, pBuffer, (unsigned int) bytesRead);
     }

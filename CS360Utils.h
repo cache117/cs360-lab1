@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX_MSG_SZ      1024
+#define MAX_MSG_SIZE      1024
 
 // Determine if the character is whitespace
 bool isWhitespace(char c)
@@ -38,12 +38,12 @@ void chomp(char *line)
 // You dont want to read too far, or you will mess up the content
 char * GetLine(int fds)
 {
-    char tline[MAX_MSG_SZ];
+    char tline[MAX_MSG_SIZE];
     char *line;
 
     int messagesize = 0;
     int amtread = 0;
-    while((amtread = read(fds, tline + messagesize, 1)) < MAX_MSG_SZ)
+    while((amtread = read(fds, tline + messagesize, 1)) < MAX_MSG_SIZE)
     {
         if (amtread >= 0)
             messagesize += amtread;
@@ -142,8 +142,8 @@ void GetHeaderLines(vector<char *> &headerLines, int skt, bool envformat)
 {
     int fd;
     vector<char *> headerLines;
-    char buffer[MAX_MSG_SZ];
-    char contentType[MAX_MSG_SZ];
+    char buffer[MAX_MSG_SIZE];
+    char contentType[MAX_MSG_SIZE];
 
 
     printf("Web Program Tools Example\n\n");
@@ -181,7 +181,7 @@ void GetHeaderLines(vector<char *> &headerLines, int skt, bool envformat)
 
     // Now read and print the rest of the file
     int rval;
-    while((rval = read(fd,buffer,MAX_MSG_SZ)) > 0) {
+    while((rval = read(fd,buffer,MAX_MSG_SIZE)) > 0) {
         write(1,buffer,rval);
     }
 }*/
