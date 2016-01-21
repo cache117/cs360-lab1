@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         std::string port = argv[optind++];
         if (port.find_first_not_of("0123456789") != string::npos)
         {
-            perror("Port must only contain numbers.");
+            perror("Port must only contain numbers.\n");
             return -1;
         }
         else
