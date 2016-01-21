@@ -172,19 +172,20 @@ int main(int argc, char *argv[])
             }
         }
 
+        /* close socket */
         if (debugFlag)
             printf("\nClosing socket.\n");
-        /* close socket */
         if (close(handleToSocket) == SOCKET_ERROR)
         {
             printf("\nCould not close socket.\n");
         }
+        /* determine success */
         if (status[0] == 'O' && status[1] == 'K')
             downloadsSucceeded++;
         else
             downloadsFailed++;
     }
-    if (debugFlag)
-        printf("%d Downloaded Successfully, %d Downloads failed.\n", downloadsSucceeded, downloadsFailed);
-
+    if (countFlag)
+        printf("=======================\n%d Downloaded Successfully, %d Downloads failed.\n", downloadsSucceeded,
+               downloadsFailed);
 }

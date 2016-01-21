@@ -53,8 +53,8 @@
       <file leaf-file-name="download.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/download.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72962224">
-              <caret line="179" column="45" selection-start-line="179" selection-start-column="45" selection-end-line="179" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.5437376">
+              <caret line="169" column="13" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -326,7 +326,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453336740635</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Formatting changes.">
+      <created>1453337017243</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1453337017243</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -372,7 +378,8 @@
     <MESSAGE value="debug working." />
     <MESSAGE value="Test" />
     <MESSAGE value="Finished... hopefully." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished... hopefully." />
+    <MESSAGE value="Formatting changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -578,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/download.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72962224">
-          <caret line="179" column="45" selection-start-line="179" selection-start-column="45" selection-end-line="179" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.5437376">
+          <caret line="169" column="13" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
           <folding />
         </state>
       </provider>
