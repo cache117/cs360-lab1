@@ -12,135 +12,183 @@
 #define SOCKET_ERROR        -1
 #define BUFFER_SIZE         10000
 #define HOST_NAME_SIZE      255
-#define MAX_GET 1000
+#define MAX_GET             1000
+
+int validatePort(std::string port)
+{
+
+}
 
 int main(int argc, char *argv[])
 {
     int option;
-    int hSocket;                 /* handle to socket */
-    struct hostent *pHostInfo;   /* holds info about a machine */
+    int handleToSocket;                 /* handle to socket */
+    struct hostent *hostInfo;   /* holds info about a machine */
     struct sockaddr_in Address;  /* Internet socket address stuct */
-    long nHostAddress;
+    long hostAddress;
     char pBuffer[BUFFER_SIZE];
     unsigned nReadAmount;
     char strHostName[HOST_NAME_SIZE];
-    int nHostPort;
+    int portNumber;
     int count = 1;
-    int printHeaders = 0;
+    int countFlag = 0;
+    int debugFlag = 0;
+    int downloadsSucceeded = 0;
+    int downloadsFailed = 0;
     char *path;
+    char contentType[MAX_MSG_SIZE];
 
-    if (argc < 4)
+    if (argc < 4 || argc > 6)
     {
-        printf("\nUsage: download host-name host-port path [-c or -d]\n");
+        printf("\nUsage: download host-name host-port path [-c times-to-download | -d]\n");
         return 0;
     }
     else
     {
-        while ((option = getopt(argc, argv, "c:d")) != -1)
+        while ((option = getopt(argc, argv, "dc:")) != -1)
         {
             switch (option)
             {
                 case 'c':
                     count = atoi(optarg);
+                    countFlag = 1;
                     break;
                 case 'd':
-                    printHeaders = 1;
+                    debugFlag = 1;
                     break;
                 default:
+                    perror("Invalid flag. \nUsage: download host-name host-port path [-c times-to-download | -d]\n")
                     abort();
             }
         }
-        printf("count = %d, printHeaders = %d\n", count, printHeaders);
+        if (argc - optind != 3)
+            perror("nUsage: download host-name host-port path [-c times-to-download | -d]\n");
+
+        printf("count = %d, printHeaders = %d\n", count, debugFlag);
 
         strcpy(strHostName, argv[optind++]);
-        nHostPort = atoi(argv[optind++]);
+        std::string port = argv[optind++];
+        if (port.find_first_not_of("0123456789") != string::npos)
+        {
+            perror("Port must only contain numbers");
+            return -1;
+        }
+        else
+        {
+            portNumber = atoi(&port[0]);
+        }
+
         path = argv[optind];
     }
 
-    printf("\nMaking a socket\n");
-    /* make a socket */
-    hSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-
-    if (hSocket == SOCKET_ERROR)
+    while (downloadsFailed + downloadsSucceeded < count)
     {
-        printf("\nCould not make a socket\n");
-        return 0;
-    }
+        if (debugFlag)
+            printf("\nMaking a socket\n");
+        /* make a socket */
+        handleToSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
-    /* get IP address from name */
-    pHostInfo = gethostbyname(strHostName);
-    /* copy address into long */
-    memcpy(&nHostAddress, pHostInfo->h_addr, pHostInfo->h_length);
-
-    /* fill address struct */
-    Address.sin_addr.s_addr = nHostAddress;
-    Address.sin_port = htons(nHostPort);
-    Address.sin_family = AF_INET;
-
-
-    /* connect to host */
-    if (connect(hSocket, (struct sockaddr *) &Address, sizeof(Address)) == SOCKET_ERROR)
-    {
-        printf("\nCould not connect to host\n");
-        return 0;
-    }
-
-    // Create HTTP Message
-    char *message = (char *) malloc(MAX_GET);
-
-
-    sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%d\r\n\r\n", path, strHostName, nHostPort);
-    // Send HTTP on the socket
-    printf("Request: %s\n", message);
-
-    write(hSocket, message, strlen(message));
-
-    vector<char *> headerLines;
-    char contentType[MAX_MSG_SIZE];
-
-    // First read the status line
-    char *startLine = GetLine(hSocket);
-    printf("Status: %s\n\n", startLine);
-
-
-    // Now print them out
-    if (printHeaders)
-    {
-        // Read the header lines
-        GetHeaderLines(headerLines, hSocket, false);
-
-        for (int i = 0; i < headerLines.size(); i++)
+        if (handleToSocket == SOCKET_ERROR)
         {
-            printf("%s\n", headerLines[i]);
-            /*
-            if (strstr(headerLines[i], "Content-Type"))
-            {
-                sscanf(headerLines[i], "Content-Type: %s", contentType);
-            }
-             */
+            printf("\nCould not make a socket\n");
+            //return 0;
         }
-        /*
-        printf("\n=======================\n");
-        printf("Headers are finished, now read the file\n");
-        printf("Content Type is %s\n", contentType);
-        printf("=======================\n\n");
-        */
-    }
 
-    // Now read and print the rest of the file
-    int bytesRead;
-    while ((bytesRead = read(hSocket, pBuffer, MAX_MSG_SIZE)) > 0)
-    {
-        write(1, pBuffer, (unsigned int) bytesRead);
-        printf("Line");
-    }
+        /* get IP address from name */
+        hostInfo = gethostbyname(strHostName);
+        if (hostInfo == NULL)
+        {
+            perror("\nCouldn't connect to host\n");
+            return -1;
+        }
+        /* copy address into long */
+        memcpy(&hostAddress, hostInfo->h_addr, hostInfo->h_length);
 
-    printf("\nClosing socket\n");
-    /* close socket */
-    if (close(hSocket) == SOCKET_ERROR)
-    {
-        printf("\nCould not close socket\n");
-        return 0;
+        /* fill address struct */
+        Address.sin_addr.s_addr = hostAddress;
+        Address.sin_port = htons(portNumber);
+        Address.sin_family = AF_INET;
+
+        /* connect to host */
+        if (connect(handleToSocket, (struct sockaddr *) &Address, sizeof(Address)) == SOCKET_ERROR)
+        {
+            printf("\nCould not connect to host\n");
+            //return 0;
+        }
+
+        // Create HTTP Message
+        char *message = (char *) malloc(MAX_GET);
+        sprintf(message, "GET %s HTTP/1.1\r\nHost:%s:%d\r\n\r\n", path, strHostName, portNumber);
+
+        // Send HTTP on the socket
+        if (debugFlag)
+            printf("Request: %s\n", message);
+        write(handleToSocket, message, strlen(message));
+
+        // First read the status line
+        char *startLine = GetLine(handleToSocket);
+        if (debugFlag)
+            printf("Status: %s\n\n", startLine);
+        char status[2];
+        status[0] = startLine[strlen(startLine) - 2];
+        status[1] = startLine[strlen(startLine) - 1];
+        if (status[0] == 'n' && status[1] == 'd')
+        {
+            perror("Invalid context, couldn't reach address.");
+            return -1;
+        }
+
+        // Read the header lines
+        vector<char *> headerLines;
+        headerLines.clear();
+        GetHeaderLines(headerLines, handleToSocket, false);
+        if (debugFlag)
+        {
+            // Now print them out
+            for (int i = 0; i < headerLines.size(); i++)
+            {
+                printf("%s\n", headerLines[i]);
+                if (strstr(headerLines[i], "Content-Type"))
+                {
+                    sscanf(headerLines[i], "Content-Type: %s", contentType);
+                }
+            }
+            printf("\n=======================\n");
+            printf("Headers are finished, now read the file\n");
+            printf("Content Type is %s\n", contentType);
+            printf("=======================\n\n");
+        }
+
+        // Now read and print the rest of the file
+        if (!countFlag)
+        {
+            int bytesRead;
+            try
+            {
+                while ((bytesRead = read(handleToSocket, pBuffer, MAX_MSG_SIZE)) > 0)
+                {
+                    write(1, pBuffer, (unsigned int) bytesRead);
+                }
+            }
+            catch (...)
+            {
+                perror("Threw exception while reading socket.");
+            }
+        }
+
+        if (debugFlag)
+            printf("\nClosing socket\n");
+        /* close socket */
+        if (close(handleToSocket) == SOCKET_ERROR)
+        {
+            printf("\nCould not close socket\n");
+        }
+        if (status[0] == 'O' && status[1] == 'K')
+            downloadsSucceeded++;
+        else
+            downloadsFailed++;
     }
+    if (debugFlag)
+        printf("%d Downloaded Successfully, %d Downloads failed", downloadsSucceeded, downloadsFailed);
 
 }
