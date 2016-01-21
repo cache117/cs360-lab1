@@ -14,11 +14,6 @@
 #define HOST_NAME_SIZE      255
 #define MAX_GET             1000
 
-int validatePort(std::string port)
-{
-
-}
-
 int main(int argc, char *argv[])
 {
     int option;
@@ -62,15 +57,16 @@ int main(int argc, char *argv[])
             }
         }
         if (argc - optind != 3)
-            perror("nUsage: download host-name host-port path [-c times-to-download | -d]\n");
+            perror("\nUsage: download host-name host-port path [-c times-to-download | -d]\n");
 
-        printf("count = %d, printHeaders = %d\n", count, debugFlag);
+        if (debugFlag)
+            printf("count = %d, printHeaders = %d\n", count, debugFlag);
 
         strcpy(strHostName, argv[optind++]);
         std::string port = argv[optind++];
         if (port.find_first_not_of("0123456789") != string::npos)
         {
-            perror("Port must only contain numbers");
+            perror("Port must only contain numbers.");
             return -1;
         }
         else
@@ -84,13 +80,13 @@ int main(int argc, char *argv[])
     while (downloadsFailed + downloadsSucceeded < count)
     {
         if (debugFlag)
-            printf("\nMaking a socket\n");
+            printf("\nMaking a socket.\n");
         /* make a socket */
         handleToSocket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
         if (handleToSocket == SOCKET_ERROR)
         {
-            printf("\nCould not make a socket\n");
+            printf("\nCould not make a socket.\n");
             //return 0;
         }
 
@@ -98,7 +94,7 @@ int main(int argc, char *argv[])
         hostInfo = gethostbyname(strHostName);
         if (hostInfo == NULL)
         {
-            perror("\nCouldn't connect to host\n");
+            perror("\nCouldn't connect to host.\n");
             return -1;
         }
         /* copy address into long */
@@ -112,7 +108,7 @@ int main(int argc, char *argv[])
         /* connect to host */
         if (connect(handleToSocket, (struct sockaddr *) &Address, sizeof(Address)) == SOCKET_ERROR)
         {
-            printf("\nCould not connect to host\n");
+            printf("\nCould not connect to host.\n");
             //return 0;
         }
 
@@ -128,7 +124,7 @@ int main(int argc, char *argv[])
         // First read the status line
         char *startLine = GetLine(handleToSocket);
         if (debugFlag)
-            printf("Status: %s\n\n", startLine);
+            printf("Status: %s.\n\n", startLine);
         char status[2];
         status[0] = startLine[strlen(startLine) - 2];
         status[1] = startLine[strlen(startLine) - 1];
@@ -154,7 +150,7 @@ int main(int argc, char *argv[])
                 }
             }
             printf("\n=======================\n");
-            printf("Headers are finished, now read the file\n");
+            printf("Headers are finished, now read the file.\n");
             printf("Content Type is %s\n", contentType);
             printf("=======================\n\n");
         }
@@ -177,11 +173,11 @@ int main(int argc, char *argv[])
         }
 
         if (debugFlag)
-            printf("\nClosing socket\n");
+            printf("\nClosing socket.\n");
         /* close socket */
         if (close(handleToSocket) == SOCKET_ERROR)
         {
-            printf("\nCould not close socket\n");
+            printf("\nCould not close socket.\n");
         }
         if (status[0] == 'O' && status[1] == 'K')
             downloadsSucceeded++;
@@ -189,6 +185,6 @@ int main(int argc, char *argv[])
             downloadsFailed++;
     }
     if (debugFlag)
-        printf("%d Downloaded Successfully, %d Downloads failed", downloadsSucceeded, downloadsFailed);
+        printf("%d Downloaded Successfully, %d Downloads failed.\n", downloadsSucceeded, downloadsFailed);
 
 }
