@@ -1,4 +1,4 @@
-all: server download
+all: download
 download: download.cpp
 	g++ -o download download.cpp
 client: client.cpp
