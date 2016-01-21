@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
                     debugFlag = 1;
                     break;
                 default:
-                    perror("Invalid flag. \nUsage: download host-name host-port path [-c times-to-download | -d]\n")
+                    perror("Invalid flag. \nUsage: download host-name host-port path [-c times-to-download | -d]\n");
                     abort();
             }
         }
